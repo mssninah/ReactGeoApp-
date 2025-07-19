@@ -6,9 +6,10 @@
 - reset App.js => titre simple
 
 # components
-- mkdir src/components
-- MapView.jsx => afficher carte
-- ListView.jsx => afficher liste
+- mkdir src/components ok 
+- MapView.jsx => afficher carte ok
+- ListView.jsx => afficher liste eto zao 
+-ViewSwitch pour switch carte/liste
 - SearchBar.jsx => recherche
 - DetailsModal.jsx => popup détails
 

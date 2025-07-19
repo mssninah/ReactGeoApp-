@@ -26,11 +26,18 @@ function MapView({ countries }) {
             <Marker key={index} position={[latlng[0], latlng[1]]} icon={epingleIcon}>
               <Popup>
                 <div>
-                  <strong>{country.name.common}</strong><br />
-                  Capital: {country.capital ? country.capital[0] : "Tsisy"}<br />
-                  Population: {country.population.toLocaleString()}
+                    <img
+                        src={country.flags.png}
+                        alt={`Drapeau de ${country.name.common}`}
+                        style={{ width: 60, height: 40, objectFit: "cover", marginBottom: 5 }}
+                    />
+                    <br />
+                    <strong>{country.name.common}</strong><br />
+                    Capital: {country.capital ? country.capital[0] : "Tsisy"}<br />
+                    Population: {country.population.toLocaleString()}
                 </div>
-              </Popup>
+                </Popup>
+
             </Marker>
           );
         })}
