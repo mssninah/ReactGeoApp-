@@ -3,3 +3,30 @@ npm start
 
 dependencies installed :
 npm install react-leaflet leaflet axios bootstrap
+
+
+api tester par postman 
+https://restcountries.com/v3.1/all?fields=name,flags,latlng,cca2,population
+structure resultat 
+explication
+Carte (latlng)
+Nom + capitale + population + drapeau 
+
+[
+    {
+        "flags": {
+            "png": "https://flagcdn.com/w320/md.png",
+            "svg": "https://flagcdn.com/md.svg",
+            "alt": "The flag of Moldova is composed of three equal vertical bands of blue, yellow and red, with the national coat of arms centered in the yellow band."
+        },
+        "name": {
+            "common": "Moldova",
+            "official": "Republic of Moldova",
+            "nativeName": {
+                "ron": {
+                    "official": "Republica Moldova",
+                    "common": "Moldova"
+                }
+            }
+        },
+        "cca2": "MD",}}
