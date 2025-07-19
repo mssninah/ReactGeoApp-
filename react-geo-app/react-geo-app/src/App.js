@@ -8,7 +8,7 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [view, setView] = useState("map"); 
   const [selectedCountry, setSelectedCountry] = useState(null);
-
+  const pageSize = 10 ;
   useEffect(() => {
     getAllCountries()
       .then((data) => {
@@ -18,7 +18,7 @@ function App() {
         console.error(err);
       });
   }, []);
-
+  const totalPages = Math.ceil(countries.length / pageSize)
   const toggleView = () => {
     setView((prev) => (prev === "map" ? "list" : "map"));
   };
