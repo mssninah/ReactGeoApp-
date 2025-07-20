@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "../assets/css/ListView.css"
 
 function ListView({ countries, onSelectCountry }) {
   const [currentPage, setCurrentPage] = useState(1)
@@ -34,68 +35,66 @@ function ListView({ countries, onSelectCountry }) {
     setCurrentPage(1)
   }
 
-  return (
-    <div>
+return (
+  <div className="listview-container">
+    <div className="listview-search">
       <input
         type="text"
-        className="form-control mb-3"
         placeholder="Recherche par nom ou capitale"
         value={query}
         onChange={handleSearch}
       />
-
-      <div className="table-responsive" style={{ maxHeight: "500px", overflowY: "auto" }}>
-        <table className="table table-striped table-hover">
-          <thead className="thead-dark">
-            <tr>
-              <th>Drapeau</th>
-              <th>Pays</th>
-              <th>Capitale</th>
-              <th>Population</th>
-            </tr>
-          </thead>
-          <tbody>
-            {paginated.map((country, idx) => (
-              <tr
-                key={idx}
-                onClick={() => onSelectCountry(country)}
-                style={{ cursor: "pointer" }}
-              >
-                <td>
-                  <img
-                    src={country.flags.png}
-                    alt={country.name.common}
-                    style={{ width: 40, height: 25 }}
-                  />
-                </td>
-                <td>{country.name.common}</td>
-                <td>{country.capital ? country.capital[0] : "tsisy"}</td>
-                <td>{country.population.toLocaleString()}</td>
-                 <td>
-                  <button
-                    className="btn btn-sm btn-primary"
-                    onClick={() => onSelectCountry(country)}
-                  >
-                    Voir sur la carte
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <div className="my-3 text-center">
-        <button className="btn btn-sm btn-secondary mx-1" onClick={prev} disabled={currentPage === 1}>
-          Précédent
-        </button>
-        <span>Page {currentPage} / {totalPages || 1}</span>
-        <button className="btn btn-sm btn-secondary mx-1" onClick={next} disabled={currentPage === totalPages}>
-          Suivant
-        </button>
-      </div>
     </div>
-  )
+
+    <div className="table-responsive">
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Drapeau</th>
+            <th>Pays</th>
+            <th>Capitale</th>
+            <th>Population</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {paginated.map((country, idx) => (
+            <tr key={idx} onClick={() => onSelectCountry(country)}>
+              <td>
+                <img
+                  src={country.flags.png}
+                  alt={country.name.common}
+                  style={{ width: 40, height: 25 }}
+                />
+              </td>
+              <td>{country.name.common}</td>
+              <td>{country.capital ? country.capital[0] : "tsisy"}</td>
+              <td>{country.population.toLocaleString()}</td>
+              <td>
+                <button
+                  className="btn btn-primary"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    onSelectCountry(country)
+                  }}
+                >
+                  Voir sur la carte
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div className="pagination-container">
+      <button onClick={prev} disabled={currentPage === 1}>Précédent</button>
+      <span>Page {currentPage} / {totalPages || 1}</span>
+      <button onClick={next} disabled={currentPage === totalPages}>Suivant</button>
+    </div>
+  </div>
+)
+
 }
 
 export default ListView

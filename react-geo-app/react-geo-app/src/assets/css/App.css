@@ -1,0 +1,87 @@
+/* App.css - Version Moderne */
+:root {
+  --primary: #e63946;
+  --primary-dark: #d62828;
+  --text: #1a1a1a;
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.app-title {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+  text-align: center;
+}
+
+.switch-btn {
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: block;
+  margin: 0 auto 2rem;
+  width: fit-content;
+}
+
+.switch-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(230, 57, 70, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0 1rem;
+    margin: 1rem auto;
+  }
+
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .switch-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Animation entre les vues */
+.view-transition {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.8; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

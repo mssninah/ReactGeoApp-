@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import MapView from "./components/MapView"
 import ListView from "./components/ListView"
 import { getAllCountries } from "./services/countryService"
+import "./assets/css/App.css"
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -24,9 +25,9 @@ function App() {
   }
 
   return (
-    <div className="container my-4">
-      <h1>React Geo App By Ninah</h1>
-      <button onClick={toggleView} className="btn btn-secondary mb-3">
+    <div className="container my-4 app-container">
+      <h1 className="app-title">React Geo App</h1>
+      <button onClick={toggleView} className="btn btn-secondary mb-3 switch-btn">
         Switch view
       </button>
 
@@ -36,6 +37,7 @@ function App() {
         <ListView countries={countries} onSelectCountry={handleSelectCountry} />
       )}
     </div>
+
   )
 }
 

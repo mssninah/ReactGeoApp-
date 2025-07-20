@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import epingleImg from "../assets/img/epingle.png"
+import "../assets/css/MapView.css"
 
 const epingleIcon = new L.Icon({
   iconUrl: epingleImg,
@@ -38,7 +39,7 @@ function MapView({ countries, selectedCountry }) {
           return (
             <Marker key={index} position={[latlng[0], latlng[1]]} icon={epingleIcon}>
               <Popup>
-                <div>
+                 <div className="popup-content">
                   <img
                     src={country.flags.png}
                     alt={`Drapeau de ${country.name.common}`}
