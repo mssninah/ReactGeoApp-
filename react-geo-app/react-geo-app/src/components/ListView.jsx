@@ -71,6 +71,14 @@ function ListView({ countries, onSelectCountry }) {
                 <td>{country.name.common}</td>
                 <td>{country.capital ? country.capital[0] : "tsisy"}</td>
                 <td>{country.population.toLocaleString()}</td>
+                 <td>
+                  <button
+                    className="btn btn-sm btn-primary"
+                    onClick={() => onSelectCountry(country)}
+                  >
+                    Voir sur la carte
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
