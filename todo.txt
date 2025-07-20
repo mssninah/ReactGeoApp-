@@ -1,0 +1,51 @@
+# todo ReactGeoApp
+
+- npm install react-leaflet leaflet axios bootstrap
+- add css leaflet et bootstrap (index.js)
+- clean src/ (remove logo, App.css, App.test.js, etc.)
+- reset App.js => titre simple
+
+# components
+- mkdir src/components ok 
+- MapView.jsx => afficher carte ok
+- ListView.jsx => afficher liste eto zao 
+-ViewSwitch pour switch carte/liste
+- SearchBar.jsx => recherche
+- DetailsModal.jsx => popup détails
+
+# map
+- afficher map vide centrée monde
+- vérifier map ok
+
+# api
+- call https://restcountries.com/v3.1/all avec axios
+- console.log data
+- useState countries
+
+# markers
+- boucler countries => Marker sur map
+- popup sur marker => nom pays
+
+# liste
+- afficher liste pays sous forme tableau ou cards
+- style avec bootstrap
+
+# détails
+- click marker ou item liste => modal avec détails pays
+
+# search
+- input search => filtrer countries par nom
+- update liste et markers
+
+# switch
+- bouton toggle carte / liste
+- state view (carte ou liste)
+
+# pagination
+- optionnelle => paginer liste si besoin
+
+# final
+- tester / corriger
+- commits clairs
+- maj README structure projet
+- push github
