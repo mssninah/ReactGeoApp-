@@ -56,7 +56,7 @@ L’application sera disponible sur [http://localhost:3000](http://localhost:300
 | --------------- | --------------------------------- |
 | `npm start`     | Démarre le serveur local          |
 | `npm run build` | Build de production               |
-| `npm test`      | Lancer les tests (si implémentés) |
+
 
 ## 🎯 Objectif
 
