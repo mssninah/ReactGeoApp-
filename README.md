@@ -26,11 +26,33 @@ L’application utilise l’API suivante :
 * [React](https://react.dev/)
 * [React Leaflet](https://react-leaflet.js.org/) pour la carte
 * [Axios](https://axios-http.com/) pour les appels API
-* [Bootstrap](https://getbootstrap.com/) pour le style
+* [Bootstrap](https://getbootstrap.com/)/ css pour le style
 
 ## 🗂️ Structure du projet
 
-📌 *À remplir plus tard une fois l’implémentation terminée*
+react-geo-app/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/
+│   │   ├── css/
+│   │   │   ├── App.css
+│   │   │   ├── MapView.css
+│   │   │   └── ListView.css
+│   │   └── img/
+│   │       └── epingle.png
+│   ├── components/
+│   │   ├── MapView.jsx
+│   │   ├── ListView.jsx
+│   │   └── SwitchView.jsx
+│   ├── services/
+│   │   └── countryService.js
+│   ├── App.jsx
+│   ├── index.js
+│   └── index.css
+├── package.json
+├── README.md
+└── .gitignore
 
 ## 🔧 Installation
 
